@@ -1,0 +1,15 @@
+{
+  "expo": {
+    "name": "Wandr",
+    "slug": "wandr",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#060B18",
+    "splash": { "image": "./assets/splash.png", "resizeMode": "contain", "backgroundColor": "#060B18" },
+    "ios": { "bundleIdentifier": "com.redsitesoftware.wandr", "supportsTablet": true },
+    "android": { "adaptiveIcon": { "foregroundImage": "./assets/adaptive-icon.png", "backgroundColor": "#060B18" }, "package": "com.redsitesoftware.wandr" },
+    "web": { "favicon": "./assets/favicon.png", "bundler": "metro" }
+  }
+}
