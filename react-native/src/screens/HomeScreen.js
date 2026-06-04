@@ -2,7 +2,7 @@
  * Wandr Home — AI trip planner landing
  */
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, TextInput, StyleSheet, SafeAreaView, ScrollView, ActivityIndicator, Linking } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, StyleSheet, SafeAreaView, ScrollView, ActivityIndicator } from 'react-native';
 import { useTravelStore, DESTINATIONS } from '../store/travelStore';
 import { colors, spacing, radius, typography } from '../theme';
 
@@ -95,9 +95,17 @@ export default function HomeScreen() {
         </View>
 
         {/* Footer */}
-        <TouchableOpacity style={s.poweredByWrap} onPress={() => Linking.openURL('https://alphinium.com')}>
-          <Text style={s.poweredBy}>Powered by <Text style={s.poweredByLink}>Alphinium</Text></Text>
-        </TouchableOpacity>
+        <View style={s.poweredByWrap}>
+          <Text style={s.poweredBy}>Powered by </Text>
+          <Text
+            accessibilityRole="link"
+            href="https://alphinium.com"
+            target="_blank"
+            style={s.poweredByLink}
+          >
+            Alphinium
+          </Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -145,7 +153,8 @@ const s = StyleSheet.create({
   featureTitle:   { fontSize: 13, fontWeight: '800', color: colors.text, textAlign: 'center', marginBottom: 4 },
   featureSub:     { fontSize: 11, color: colors.textMuted, textAlign: 'center', lineHeight: 15 },
 
-  poweredByWrap:  { alignItems: 'center', marginTop: spacing.xl, paddingBottom: spacing.sm },
+  poweredByWrap:  { flexDirection: 'row', justifyContent: 'center', alignItems: 'center',
+                    marginTop: spacing.xl, paddingBottom: spacing.sm },
   poweredBy:      { fontSize: 12, color: colors.textMuted },
-  poweredByLink:  { color: colors.primary, fontWeight: '600' },
+  poweredByLink:  { fontSize: 12, color: colors.primary, fontWeight: '600' },
 });
